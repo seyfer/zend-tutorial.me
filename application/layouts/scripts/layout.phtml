@@ -1,0 +1,35 @@
+<!-- application/layouts/scripts/layout.phtml -->
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Zend Framework Quickstart Application</title>
+        <?php echo $this->headLink()->appendStylesheet('/media/css/global.css') ?>
+    </head>
+    <body>
+        <div id="header" class="greyLine">
+            <div id="header-logo" style="float: left">
+                <b>ZF Quickstart Application</b>
+            </div>
+            <div id="header-navigation" style="float: right">
+                <a href="<?php
+                echo $this->url(
+                        array('controller' => 'guestbook'), 'default', true)
+                ?>">Guestbook</a>
+                <a href="<?php
+                echo $this->url(
+                        array('controller' => 'index'), 'default', true)
+                ?>">Main</a>
+            </div>
+        </div>
+
+        <div id="content" style="border: 1px solid black">
+            <?php echo $this->layout()->content ?>
+        </div>
+
+        <div id="footer" class="greyLine">
+            (c)
+        </div>
+
+    </body>
+</html>
